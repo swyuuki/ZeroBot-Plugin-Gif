@@ -1,5 +1,5 @@
 # ZeroBot-Plugin-Gif
-ZeroBot插件，可以制作各种沙雕gif图
+[ZeroBot QQ机器人](https://github.com/wdvxdr1123/ZeroBot)插件，可以制作各种沙雕gif图
 触发方式分3种：
 1. [指令词]+[qq号] 如：爬123456
 2. [指令词]+[图片] 如：爬[图片]
