@@ -36,12 +36,16 @@ func (cc Paths) Si() string {
 
 //一直
 func (cc Paths) YiZhi() string {
-	tou := img.ImDc(cc.Pngs[0], 0, 0).Im
-	dc := img.ImDc(cc.Sc+`xiao/0.png`, 0, 0).
-		Over(tou, 249, 249, 0, 0).
-		Over(tou, 47, 47, 140, 250).Im
-	img.SavePng(dc, cc.User+`一直.png`)
-	return img.SGpic(cc.User + `一直.png`)
+	tou := img.ImsDc(cc.Pngs[0], 0, 0)
+	var dc []*image.NRGBA
+	for _, v := range tou {
+		dc = append(dc, img.ImDc(cc.Sc+`xiao/0.png`, 0, 0).
+			Over(v, 249, 249, 0, 0).
+			Over(v, 47, 47, 140, 250).Clone().Im,
+		)
+	}
+	img.SaveGif(img.AndGif(1, dc), cc.User+`一直.gif`)
+	return img.SGpic(cc.User + `一直.gif`)
 }
 
 //关注 必须下载素材到指定位置才可用
