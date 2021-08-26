@@ -62,3 +62,20 @@ func (cc Paths) Chong() string {
 	return img.SGpic(cc.User + `冲.gif`)
 
 }
+
+//丢
+func (cc Paths) Diu() string {
+	tou := img.ImDc(cc.Pngs[0], 0, 0).Circle(0).Im
+	diu := []*image.NRGBA{
+		img.ImDc(cc.Sc+`diu/0.png`, 0, 0).Over(tou, 63, 63, 216, 72).Im,
+		img.ImDc(cc.Sc+`diu/1.png`, 0, 0).Over(tou, 65, 65, 244, 71).Im,
+		img.ImDc(cc.Sc+`diu/2.png`, 0, 0).Im,
+		img.ImDc(cc.Sc+`diu/3.png`, 0, 0).Over(tou, 245, 245, 38, 257).Im,
+		img.ImDc(cc.Sc+`diu/4.png`, 0, 0).Over(tou, 370, 370, -100, 400).Over(tou, 66, 66, 578, 139).Im,
+		img.ImDc(cc.Sc+`diu/5.png`, 0, 0).Over(tou, 64, 64, 560, 145).Im,
+		img.ImDc(cc.Sc+`diu/6.png`, 0, 0).Over(tou, 70, 70, 517, 62).Im,
+		img.ImDc(cc.Sc+`diu/7.png`, 0, 0).Over(tou, 350, 350, -100, 440).Im,
+	}
+	img.SaveGif(img.AndGif(1, diu), cc.User+`丢.gif`)
+	return img.SGpic(cc.User + `丢.gif`)
+}
