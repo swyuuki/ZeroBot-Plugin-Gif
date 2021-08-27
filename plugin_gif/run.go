@@ -34,23 +34,24 @@ func init() { // 插件主体
 		List := ctx.State["regex_matched"].([]string)
 		YuanTu(List[4] + List[5] + List[6])
 		var picurl string
-		if List[1] == "爬" {
+		switch {
+		case List[1] == "爬":
 			picurl = Ypath.Pa()
-		} else if List[1] == "摸" {
+		case List[1] == "摸":
 			picurl = Ypath.Mo()
-		} else if List[1] == "丢" {
-			picurl = Ypath.Diu()
-		} else if List[1] == "搓" {
+		case List[1] == "搓":
 			picurl = Ypath.Cuo()
-		} else if List[1] == "拍" {
+		case List[1] == "拍":
 			picurl = Ypath.Pai()
-		} else if List[1] == "撕" {
+		case List[1] == "丢":
+			picurl = Ypath.Diu()
+		case List[1] == "撕":
 			picurl = Ypath.Si()
-		} else if List[1] == "冲" {
+		case List[1] == "冲":
 			picurl = Ypath.Chong()
-		} else if List[1] == "一直" {
+		case List[1] == "一直":
 			picurl = Ypath.YiZhi()
-		} else {
+		default:
 			picurl = Ypath.Other(List[1]) //"灰度", "上翻", "下翻", "左翻", "右翻", "反色", "倒放", "浮雕", "打码", "负片"
 		}
 		ctx.SendChain(
