@@ -21,7 +21,7 @@ func FirstValueInList(list []string) zero.Rule {
 	}
 }
 
-var a1 = []string{"搓", "冲", "摸", "拍", "抬", "次", "丢", "吃", "敲", "透", "啃",
+var a1 = []string{"搓", "冲", "摸", "拍", "抬", "次", "丢", "吃", "敲", "透", "啃", "亲",
 	"爬", "撕", "一直",
 	"灰度", "上翻", "下翻", "左翻", "右翻", "反色", "浮雕", "打码", "负片"}
 
@@ -33,7 +33,7 @@ func init() { // 插件主体
 		SetBlock(true).SetPriority(20).Handle(func(ctx *zero.Ctx) {
 		NewPath(ctx.Event.UserID)
 		List := ctx.State["regex_matched"].([]string)
-		YuanTu(List[4] + List[5] + List[6])
+		YuanTu(List[4]+List[5]+List[6], strconv.FormatInt(ctx.Event.UserID, 10))
 		var picurl string
 		switch {
 		case List[1] == "爬":
@@ -44,6 +44,8 @@ func init() { // 插件主体
 			picurl = Ypath.Chi()
 		case List[1] == "啃":
 			picurl = Ypath.Ken()
+		case List[1] == "亲":
+			picurl = Ypath.Qin()
 		case List[1] == "敲":
 			picurl = Ypath.Qiao()
 		case List[1] == "搓":
@@ -69,11 +71,13 @@ func init() { // 插件主体
 }
 
 
-func YuanTu(s string) {
-	_, err := strconv.Atoi(s)
-	if err != nil {
-		Download(s, Ypath.User+"yuan.gif")
-	} else {
-		Download("http://q4.qlogo.cn/g?b=qq&nk="+s+"&s=640", Ypath.User+"yuan.gif")
+func YuanTu(s ...string) {
+	for i, v := range s {
+		_, err := strconv.Atoi(v)
+		if err != nil {
+			Download(v, Ypath.User+"yuan"+strconv.Itoa(i)+".gif")
+		} else {
+			Download("http://q4.qlogo.cn/g?b=qq&nk="+v+"&s=640", Ypath.User+"yuan"+strconv.Itoa(i)+".gif")
+		}
 	}
 }
