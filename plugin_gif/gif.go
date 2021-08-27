@@ -38,6 +38,30 @@ func (cc Paths) Cuo() string {
 	img.SaveGif(img.AndGif(5, cuo), cc.User+`搓.gif`)
 	return img.SGpic(cc.User + `搓.gif`)
 }
+//敲
+func (cc Paths) Qiao() string {
+	tou := img.ImDc(cc.Pngs[0], 40, 40).Circle(0).Im
+	qiao := []*image.NRGBA{
+		img.ImDc(DLSc(`qiao/0.png`), 0, 0).Over(tou, 40, 33, 57, 52).Im,
+		img.ImDc(DLSc(`qiao/1.png`), 0, 0).Over(tou, 38, 36, 58, 50).Im,
+	}
+	img.SaveGif(img.AndGif(1, qiao), cc.User+`敲.gif`)
+	return img.SGpic(cc.User + `敲.gif`)
+
+}
+
+//吃
+func (cc Paths) Chi() string {
+	tou := img.ImDc(cc.Pngs[0], 32, 32).Im
+	chi := []*image.NRGBA{
+		img.ImDc(DLSc(`chi/0.png`), 0, 0).DstOver(tou, 0, 0, 1, 38).Im,
+		img.ImDc(DLSc(`chi/1.png`), 0, 0).DstOver(tou, 0, 0, 1, 38).Im,
+		img.ImDc(DLSc(`chi/2.png`), 0, 0).DstOver(tou, 0, 0, 1, 38).Im,
+	}
+	img.SaveGif(img.AndGif(1, chi), cc.User+`吃.gif`)
+	return img.SGpic(cc.User + `吃.gif`)
+
+}
 
 //拍
 func (cc Paths) Pai() string {
@@ -76,6 +100,6 @@ func (cc Paths) Diu() string {
 		img.ImDc(DLSc(`diu/6.png`), 0, 0).Over(tou, 35, 35, 259, 31).Im,
 		img.ImDc(DLSc(`diu/7.png`), 0, 0).Over(tou, 175, 175, -50, 220).Im,
 	}
-	img.SaveGif(img.AndGif(1, diu), cc.User+`丢.gif`)
+	img.SaveGif(img.AndGif(7, diu), cc.User+`丢.gif`)
 	return img.SGpic(cc.User + `丢.gif`)
 }
