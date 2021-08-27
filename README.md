@@ -1,6 +1,6 @@
 # ZeroBot-Plugin-Gif
 [ZeroBot QQ机器人](https://github.com/wdvxdr1123/ZeroBot)插件，可以制作各种沙雕gif图
->部分必须下载素材包使用:https://github.com/tdf1939/sucai
+>素材包地址:https://github.com/tdf1939/sucai
 
 
 触发方式分3种：
