@@ -69,17 +69,18 @@ func (cc Paths) Ceng() string {
 	tou := img.ImDc(cc.Pngs[0], 100, 100).Circle(0).Im
 	tou2 := img.ImDc(cc.Pngs[1], 100, 100).Circle(0).Im
 	ceng := []*image.NRGBA{
-		img.ImDc(DLSc(`ceng/0.png`), 0, 0).Over(tou, 90, 92, 34, 83).Over(tou2, 77, 103, 102, 81).Im,
-		img.ImDc(DLSc(`ceng/1.png`), 0, 0).Over(tou, 88, 86, 43, 97).Over(img.Rotate(tou2, 10, 62, 127).Im, 0, 0, 92, 40).Im,
-		img.ImDc(DLSc(`ceng/2.png`), 0, 0).Over(tou, 81, 88, 62, 93).Over(tou2, 76, 117, 90, 8).Im,
-		img.ImDc(DLSc(`ceng/3.png`), 0, 0).Over(tou, 79, 91, 47, 76).Over(img.Rotate(tou2, -40, 94, 94).Im, 0, 0, 53, -20).Im,
-		img.ImDc(DLSc(`ceng/4.png`), 0, 0).Over(tou, 83, 89, 52, 102).Over(img.Rotate(tou2, -66, 132, 80).Im, 0, 0, 78, 40).Im,
-		img.ImDc(DLSc(`ceng/5.png`), 0, 0).Over(tou, 78, 87, 56, 97).Over(tou2, 71, 100, 110, 94).Im,
+		img.ImDc(DLSc(`ceng/0.png`), 0, 0).Over(tou, 75, 77, 40, 88).Over(tou2, 77, 103, 102, 81).Im,
+		img.ImDc(DLSc(`ceng/1.png`), 0, 0).Over(tou, 75, 77, 46, 100).Over(img.Rotate(tou2, 10, 62, 127).Im, 0, 0, 92, 40).Im,
+		img.ImDc(DLSc(`ceng/2.png`), 0, 0).Over(tou, 75, 77, 67, 99).Over(tou2, 76, 117, 90, 8).Im,
+		img.ImDc(DLSc(`ceng/3.png`), 0, 0).Over(tou, 75, 77, 52, 83).Over(img.Rotate(tou2, -40, 94, 94).Im, 0, 0, 53, -20).Im,
+		img.ImDc(DLSc(`ceng/4.png`), 0, 0).Over(tou, 75, 77, 56, 110).Over(img.Rotate(tou2, -66, 132, 80).Im, 0, 0, 78, 40).Im,
+		img.ImDc(DLSc(`ceng/5.png`), 0, 0).Over(tou, 75, 77, 62, 102).Over(tou2, 71, 100, 110, 94).Im,
 	}
-	img.SaveGif(img.AndGif(8, qin), cc.User+`蹭.gif`)
+	img.SaveGif(img.AndGif(8, ceng), cc.User+`蹭.gif`)
 	// return "file:///" + cc.User + `蹭.gif`
 	return img.SGpic(cc.User + `蹭.gif`)
 }
+
 
 //啃
 func (cc Paths) Ken() string {
