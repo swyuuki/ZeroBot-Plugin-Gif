@@ -33,5 +33,5 @@
 - [x] 负片
 
 ## 其他插件推荐：
-1. ZeroBot实用插件合集：https://github.com/FloatTech/ZeroBot-Plugin
-2. 炉石插件：https://github.com/tdf1939/ZeroBot-Plugin-HS
+1. 炉石插件：https://github.com/tdf1939/ZeroBot-Plugin-HS
+2. ZeroBot实用插件合集：https://github.com/FloatTech/ZeroBot-Plugin
