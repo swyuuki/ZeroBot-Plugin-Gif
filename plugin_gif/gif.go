@@ -65,7 +65,7 @@ func (cc Paths) Chong() string {
 
 //丢
 func (cc Paths) Diu() string {
-	tou := img.ImDc(cc.Pngs[0], 0, 0).Circle(0).Im
+	tou := img.ImDc(cc.Pngs[0], 200, 200).Circle(0).Im
 	diu := []*image.NRGBA{
 		img.ImDc(cc.Sc+`diu/0.png`, 0, 0).Over(tou, 32, 32, 108, 36).Im,
 		img.ImDc(cc.Sc+`diu/1.png`, 0, 0).Over(tou, 32, 32, 122, 36).Im,
