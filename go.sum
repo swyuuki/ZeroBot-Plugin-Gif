@@ -41,10 +41,10 @@ github.com/stretchr/testify v1.7.0/go.mod h1:6Fq8oRcR53rry900zMqJjRRixrwX3KX962/
 github.com/syndtr/goleveldb v1.0.0/go.mod h1:ZVVdQEZoIme9iO1Ch2Jdy24qqXrMMOU6lpPAyBWyWuQ=
 github.com/t-tomalak/logrus-easy-formatter v0.0.0-20190827215021-c074f06c5816 h1:J6v8awz+me+xeb/cUTotKgceAYouhIB3pjzgRd6IlGk=
 github.com/t-tomalak/logrus-easy-formatter v0.0.0-20190827215021-c074f06c5816/go.mod h1:tzym/CEb5jnFI+Q0k4Qq3+LvRF4gO3E2pxS8fHP8jcA=
-github.com/tdf1939/img v0.0.0-20210818042807-1e0dee732178 h1:nSEtriEkroGknE8KEbiv/xQHAJASo7UQny5Fn/YYs1g=
-github.com/tdf1939/img v0.0.0-20210818042807-1e0dee732178/go.mod h1:FgTEOcosTWrkOr7++gbtPSj1rX5loRWrf/AL+hm3Cnw=
-github.com/tdf1939/img v0.0.0-20210819050706-e4d689fec6b9 h1:nL8/sbODJY5eUdAFO9bMGPDs53gAs7bSwajTcvY4kEA=
-github.com/tdf1939/img v0.0.0-20210819050706-e4d689fec6b9/go.mod h1:FgTEOcosTWrkOr7++gbtPSj1rX5loRWrf/AL+hm3Cnw=
+github.com/tdf1939/img v0.0.0-20210819110805-f023acf32347 h1:PWqtKJx/Xbl6d5nZIdZRKvghv1UhqLabHMNOZH/uJkM=
+github.com/tdf1939/img v0.0.0-20210819110805-f023acf32347/go.mod h1:FgTEOcosTWrkOr7++gbtPSj1rX5loRWrf/AL+hm3Cnw=
+github.com/tdf1939/img v0.0.0-20210827153520-90cb4e9580a3 h1:DUQxv4Ua1sb0/zOkExNJ/MSJcSnbZ7WT9thXCPWTh5U=
+github.com/tdf1939/img v0.0.0-20210827153520-90cb4e9580a3/go.mod h1:FgTEOcosTWrkOr7++gbtPSj1rX5loRWrf/AL+hm3Cnw=
 github.com/tidwall/gjson v1.8.0 h1:Qt+orfosKn0rbNTZqHYDqBrmm3UDA4KRkv70fDzG+PQ=
 github.com/tidwall/gjson v1.8.0/go.mod h1:5/xDoumyyDNerp2U36lyolv46b3uF/9Bu6OfyQ9GImk=
 github.com/tidwall/match v1.0.3 h1:FQUVvBImDutD8wJLN6c5eMzWtjgONK9MwIBCOrUJKeE=
