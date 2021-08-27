@@ -21,7 +21,8 @@ func FirstValueInList(list []string) zero.Rule {
 	}
 }
 
-var a1 = []string{"搓", "爬", "冲", "摸", "拍", "抬", "次", "丢", "吃", "敲", "透", "撕", "一直",
+var a1 = []string{"搓", "冲", "摸", "拍", "抬", "次", "丢", "吃", "敲", "透", "啃",
+	"爬", "撕", "一直",
 	"灰度", "上翻", "下翻", "左翻", "右翻", "反色", "浮雕", "打码", "负片"}
 
 // var a2 = []string{"旋转", "变形"}
@@ -41,6 +42,8 @@ func init() { // 插件主体
 			picurl = Ypath.Mo()
 		case List[1] == "吃":
 			picurl = Ypath.Chi()
+		case List[1] == "啃":
+			picurl = Ypath.Ken()
 		case List[1] == "敲":
 			picurl = Ypath.Qiao()
 		case List[1] == "搓":
@@ -64,6 +67,7 @@ func init() { // 插件主体
 		)
 	})
 }
+
 
 func YuanTu(s string) {
 	_, err := strconv.Atoi(s)
