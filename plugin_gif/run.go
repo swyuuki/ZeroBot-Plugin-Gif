@@ -39,6 +39,10 @@ func init() { // 插件主体
 			picurl = Ypath.Pa()
 		case List[1] == "摸":
 			picurl = Ypath.Mo()
+		case List[1] == "吃":
+			picurl = Ypath.Chi()
+		case List[1] == "敲":
+			picurl = Ypath.Qiao()
 		case List[1] == "搓":
 			picurl = Ypath.Cuo()
 		case List[1] == "拍":
