@@ -21,7 +21,7 @@ type Paths struct {
 
 var Ypath = Paths{
 	Sc:   `data/image/sucai/`,
-	Pngs: []string{`data/image/user/1/yuan.gif`},
+	Pngs: []string{`data/image/user/1/yuan.gif`, `data/image/user/1/yuan2.gif`},
 }
 
 func DLSc(nm string) string {
@@ -36,7 +36,8 @@ func DLSc(nm string) string {
 func NewPath(user int64) string {
 	Ypath.User = `data/image/user/` + strconv.FormatInt(user, 10) + `/`
 	os.MkdirAll(Ypath.User, 0777)
-	Ypath.Pngs[0] = Ypath.User + "yuan.gif"
+	Ypath.Pngs[0] = Ypath.User + "yuan0.gif"
+	Ypath.Pngs[1] = Ypath.User + "yuan1.gif"
 	return Ypath.User
 }
 
