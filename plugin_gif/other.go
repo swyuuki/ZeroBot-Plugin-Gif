@@ -20,18 +20,16 @@ type Paths struct {
 }
 
 var Ypath = Paths{
-	Sc: `https://ghproxy.com/https://raw.githubusercontent.com/tdf1939/sucai/main/`,
-	// Sc:   `data/image/sucai/`,
+	Sc:   `data/image/sucai/`,
 	Pngs: []string{`data/image/user/1/yuan.gif`},
 }
 
-func ScPath() string {
-	_, err := os.Stat(`data/image/sucai/pa/`)
-	if err == nil {
-		return `data/image/sucai/`
+func DLSc(nm string) string {
+	_, err := os.Stat(`data/image/sucai/` + nm)
+	if err != nil {
+		Download(`https://ghproxy.com/https://raw.githubusercontent.com/tdf1939/sucai/main/`+nm, `data/image/sucai/`+nm)
 	}
-	// return `https://cdn.jsdelivr.net/gh/tdf1939/sucai/`
-	return `https://ghproxy.com/https://raw.githubusercontent.com/tdf1939/sucai/main/`
+	return `data/image/sucai/` + nm
 }
 
 //更新用户目录
@@ -39,7 +37,6 @@ func NewPath(user int64) string {
 	Ypath.User = `data/image/user/` + strconv.FormatInt(user, 10) + `/`
 	os.MkdirAll(Ypath.User, 0777)
 	Ypath.Pngs[0] = Ypath.User + "yuan.gif"
-	Ypath.Sc = ScPath()
 	return Ypath.User
 }
 
