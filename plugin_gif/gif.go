@@ -38,6 +38,7 @@ func (cc Paths) Cuo() string {
 	img.SaveGif(img.AndGif(5, cuo), cc.User+`搓.gif`)
 	return img.SGpic(cc.User + `搓.gif`)
 }
+
 //敲
 func (cc Paths) Qiao() string {
 	tou := img.ImDc(cc.Pngs[0], 40, 40).Circle(0).Im
@@ -61,6 +62,31 @@ func (cc Paths) Chi() string {
 	img.SaveGif(img.AndGif(1, chi), cc.User+`吃.gif`)
 	return img.SGpic(cc.User + `吃.gif`)
 
+}
+
+//啃
+func (cc Paths) Ken() string {
+	tou := img.ImDc(cc.Pngs[0], 100, 100).Im
+	ken := []*image.NRGBA{
+		img.ImDc(DLSc(`ken/0.png`), 0, 0).DstOver(tou, 90, 90, 105, 150).Im,
+		img.ImDc(DLSc(`ken/1.png`), 0, 0).DstOver(tou, 90, 83, 96, 172).Im,
+		img.ImDc(DLSc(`ken/2.png`), 0, 0).DstOver(tou, 90, 90, 106, 148).Im,
+		img.ImDc(DLSc(`ken/3.png`), 0, 0).DstOver(tou, 88, 88, 97, 167).Im,
+		img.ImDc(DLSc(`ken/4.png`), 0, 0).DstOver(tou, 90, 85, 89, 179).Im,
+		img.ImDc(DLSc(`ken/5.png`), 0, 0).DstOver(tou, 90, 90, 106, 151).Im,
+		img.ImDc(DLSc(`ken/6.png`), 0, 0).Im,
+		img.ImDc(DLSc(`ken/7.png`), 0, 0).Im,
+		img.ImDc(DLSc(`ken/8.png`), 0, 0).Im,
+		img.ImDc(DLSc(`ken/9.png`), 0, 0).Im,
+		img.ImDc(DLSc(`ken/10.png`), 0, 0).Im,
+		img.ImDc(DLSc(`ken/11.png`), 0, 0).Im,
+		img.ImDc(DLSc(`ken/12.png`), 0, 0).Im,
+		img.ImDc(DLSc(`ken/13.png`), 0, 0).Im,
+		img.ImDc(DLSc(`ken/14.png`), 0, 0).Im,
+		img.ImDc(DLSc(`ken/15.png`), 0, 0).Im,
+	}
+	img.SaveGif(img.AndGif(7, ken), cc.User+`啃.gif`)
+	return img.SGpic(cc.User + `啃.gif`)
 }
 
 //拍
