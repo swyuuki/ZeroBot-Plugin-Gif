@@ -17,7 +17,7 @@ var a1 = []string{"搓", "冲", "摸", "拍", "抬", "次", "丢", "吃", "敲",
 // var a2 = []string{"旋转", "变形"}
 
 func init() { // 插件主体
-	engine := control.Register("saucenao", &control.Options{
+	engine := control.Register("gif", &control.Options{
 		DisableOnDefault: false,
 		Help:             "制图\n- " + strings.Join(a1, "\n- "),
 	})
