@@ -15,7 +15,7 @@ func (cc context) pa() string {
 	// 随机爬图序号
 	rand.Seed(time.Now().UnixNano())
 	rand := rand.Intn(60) + 1
-	dc := img.ImDc(downloadBy(`pa/`+strconv.Itoa(rand)+`.png`), 0, 0).
+	dc := img.ImDc(downloadPicture(`pa/`+strconv.Itoa(rand)+`.png`), 0, 0).
 		DstOver(tou, 100, 100, 0, 400).Im
 	img.SavePng(dc, cc.user+`爬.png`)
 	return img.SGpic(cc.user + `爬.png`)
@@ -27,7 +27,7 @@ func (cc context) si() string {
 	tou := img.ImDc(cc.imgs[0], 0, 0).Im
 	im1 := img.Rotate(tou, 20, 380, 380)
 	im2 := img.Rotate(tou, -12, 380, 380)
-	dc := img.ImDc(downloadBy(`si/0.png`), 0, 0).
+	dc := img.ImDc(downloadPicture(`si/0.png`), 0, 0).
 		DstOver(im1.Im, im1.W, im1.H, -3, 370).
 		DstOver(im2.Im, im2.W, im2.H, 653, 310).Im
 	img.SavePng(dc, cc.user+`撕.png`)
@@ -39,7 +39,7 @@ func (cc context) yiZhi() string {
 	tou := img.ImsDc(cc.imgs[0], 0, 0)
 	var dc []*image.NRGBA
 	for _, v := range tou {
-		dc = append(dc, img.ImDc(downloadBy(`xiao/0.png`), 0, 0).
+		dc = append(dc, img.ImDc(downloadPicture(`xiao/0.png`), 0, 0).
 			Over(v, 249, 249, 0, 0).
 			Over(v, 47, 47, 140, 250).Clone().Im,
 		)
@@ -53,10 +53,10 @@ func (cc context) guanZhu(txt1, txt2 string) string {
 	// 加载图片
 	im := img.ImDc(cc.imgs[0], 0, 0)
 	//叠加图片
-	dst := img.ImDc(downloadBy(`guanzhu/gg.png`), 0, 0).
+	dst := img.ImDc(downloadPicture(`guanzhu/gg.png`), 0, 0).
 		DstOver(im.Im, 155, 155, 45, 45)
-	dc := dst.Text(downloadBy(`font/3.ttf`), 38, img.Black, 210, 110, txt1).
-		Text(downloadBy(`font/3.ttf`), 36, img.Grey, 210, 170, txt2).Im
+	dc := dst.Text(downloadPicture(`font/3.ttf`), 38, img.Black, 210, 110, txt1).
+		Text(downloadPicture(`font/3.ttf`), 36, img.Grey, 210, 170, txt2).Im
 	img.SavePng(dc, cc.user+`关注.png`)
 	return img.SGpic(cc.user + `关注.png`)
 }

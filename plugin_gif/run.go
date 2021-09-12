@@ -1,3 +1,4 @@
+// Package plugin_gif 制图
 package plugin_gif
 
 import (
@@ -52,7 +53,7 @@ func init() { // 插件主体
 		case list[1] == "一直":
 			picurl = c.yiZhi()
 		default:
-			picurl = c.other(list[1]) //"灰度", "上翻", "下翻", "左翻", "右翻", "反色", "倒放", "浮雕", "打码", "负片"
+			picurl = c.other(list[1]) // "灰度", "上翻", "下翻", "左翻", "右翻", "反色", "倒放", "浮雕", "打码", "负片"
 		}
 		ctx.Send(
 			// 发送图片
