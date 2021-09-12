@@ -27,30 +27,30 @@ func init() { // 插件主体
 		list := ctx.State["regex_matched"].([]string)
 		c.prepareLogos(list[4]+list[5]+list[6], strconv.FormatInt(ctx.Event.UserID, 10))
 		var picurl string
-		switch {
-		case list[1] == "爬":
+		switch list[1] {
+		case "爬":
 			picurl = c.pa()
-		case list[1] == "摸":
+		case "摸":
 			picurl = c.mo()
-		case list[1] == "吃":
+		case "吃":
 			picurl = c.chi()
-		case list[1] == "啃":
+		case "啃":
 			picurl = c.ken()
-		case list[1] == "蹭":
+		case "蹭":
 			picurl = c.ceng()
-		case list[1] == "敲":
+		case "敲":
 			picurl = c.qiao()
-		case list[1] == "搓":
+		case "搓":
 			picurl = c.cuo()
-		case list[1] == "拍":
+		case "拍":
 			picurl = c.pai()
-		case list[1] == "丢":
+		case "丢":
 			picurl = c.diu()
-		case list[1] == "撕":
+		case "撕":
 			picurl = c.si()
-		case list[1] == "冲":
+		case "冲":
 			picurl = c.chong()
-		case list[1] == "一直":
+		case "一直":
 			picurl = c.yiZhi()
 		default:
 			picurl = c.other(list[1]) // "灰度", "上翻", "下翻", "左翻", "右翻", "反色", "倒放", "浮雕", "打码", "负片"
