@@ -29,7 +29,7 @@ var a1 = []string{"搓", "冲", "摸", "拍", "抬", "次", "丢", "吃", "敲",
 
 func init() { // 插件主体
 
-	zero.OnRegex(`^(` + strings.Join(a1, "|") + `)\D*?(\[CQ:(image,file=([0-9a-zA-Z]+).*?|at.+?(\d{5,11}))\].*|(\d+))$`).
+	zero.OnRegex(`^(` + strings.Join(a1, "|") + `)\D*?(\[CQ:(image\,file=([0-9a-zA-Z]+).*?|at.+?(\d{5,11}))\].*|(\d+))$`).
 		SetBlock(true).SetPriority(20).Handle(func(ctx *zero.Ctx) {
 		NewPath(ctx.Event.UserID)
 		List := ctx.State["regex_matched"].([]string)
