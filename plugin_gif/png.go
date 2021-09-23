@@ -10,7 +10,7 @@ import (
 )
 
 //爬
-func (cc Paths) Pa() string {
+func (cc *Paths) Pa() string {
 	tou := img.ImDc(cc.Pngs[0], 0, 0).Circle(0).Im
 	//随机爬图序号
 	rand.Seed(time.Now().UnixNano())
@@ -23,7 +23,7 @@ func (cc Paths) Pa() string {
 }
 
 //撕
-func (cc Paths) Si() string {
+func (cc *Paths) Si() string {
 	tou := img.ImDc(cc.Pngs[0], 0, 0).Im
 	im1 := img.Rotate(tou, 20, 380, 380)
 	im2 := img.Rotate(tou, -12, 380, 380)
@@ -35,7 +35,7 @@ func (cc Paths) Si() string {
 }
 
 //一直
-func (cc Paths) YiZhi() string {
+func (cc *Paths) YiZhi() string {
 	tou := img.ImsDc(cc.Pngs[0], 0, 0)
 	var dc []*image.NRGBA
 	for _, v := range tou {
@@ -49,7 +49,7 @@ func (cc Paths) YiZhi() string {
 }
 
 //关注 必须下载素材到指定位置才可用
-func (cc Paths) GuanZhu(txt1, txt2 string) string {
+func (cc *Paths) GuanZhu(txt1, txt2 string) string {
 	// 加载图片
 	im := img.ImDc(cc.Pngs[0], 0, 0)
 	//叠加图片
@@ -62,7 +62,7 @@ func (cc Paths) GuanZhu(txt1, txt2 string) string {
 }
 
 //简单
-func (cc Paths) Other(value ...string) string {
+func (cc *Paths) Other(value ...string) string {
 	// 加载图片
 	im := img.ImDc(cc.Pngs[0], 0, 0)
 	var a *image.NRGBA
