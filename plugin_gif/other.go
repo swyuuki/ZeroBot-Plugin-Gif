@@ -11,34 +11,43 @@ import (
 	"strings"
 )
 
-var UserPath string
-
+//所有路径
 type Paths struct {
-	Sc   string
-	User string
-	Pngs []string
+	User string   //用户目录路径
+	Pngs []string //待处理图片路径
 }
 
-var Ypath = Paths{
-	Sc:   `data/image/sucai/`,
-	Pngs: []string{`data/image/user/1/yuan.gif`, `data/image/user/1/yuan2.gif`},
+//更新用户目录
+func NewPath(user int64) *Paths {
+	a := `data/image/user/` + strconv.FormatInt(user, 10) + `/`
+	os.MkdirAll(a, 0777)
+	return &Paths{
+		User: a,
+		Pngs: []string{},
+	}
 }
 
+//添加图片
+func (cc *Paths) AddIm(s ...string) {
+	for _, v := range s {
+		_, err := strconv.Atoi(v)
+		n := cc.User + strings.ToUpper(v) + `.png`
+		if err != nil {
+			Download("https://gchat.qpic.cn/gchatpic_new//--"+strings.ToUpper(v)+"/0", n)
+		} else {
+			Download("http://q4.qlogo.cn/g?b=qq&nk="+v+"&s=640", n)
+		}
+		cc.Pngs = append(cc.Pngs, n)
+	}
+}
+
+//获取素材
 func DLSc(nm string) string {
 	_, err := os.Stat(`data/image/sucai/` + nm)
 	if err != nil {
 		Download(`https://ghproxy.com/https://raw.githubusercontent.com/tdf1939/sucai/main/`+nm, `data/image/sucai/`+nm)
 	}
 	return `data/image/sucai/` + nm
-}
-
-//更新用户目录
-func NewPath(user int64) string {
-	Ypath.User = `data/image/user/` + strconv.FormatInt(user, 10) + `/`
-	os.MkdirAll(Ypath.User, 0777)
-	Ypath.Pngs[0] = Ypath.User + "yuan0.gif"
-	Ypath.Pngs[1] = Ypath.User + "yuan1.gif"
-	return Ypath.User
 }
 
 //下载图片
@@ -65,9 +74,7 @@ func Download(url, dlpath string) {
 	}
 	// 获得文件的writer对象
 	writer := bufio.NewWriter(file)
-
-	written, _ := io.Copy(writer, reader)
-	fmt.Printf("Total length: %d", written)
+	io.Copy(writer, reader)
 }
 
 //图片转Base64
