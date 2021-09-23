@@ -31,9 +31,9 @@ func init() { // 插件主体
 
 	zero.OnRegex(`^(` + strings.Join(a1, "|") + `)\D*?(\[CQ:(image\,file=([0-9a-zA-Z]+).*?|at.+?(\d{5,11}))\].*|(\d+))$`).
 		SetBlock(true).SetPriority(20).Handle(func(ctx *zero.Ctx) {
-		NewPath(ctx.Event.UserID)
 		List := ctx.State["regex_matched"].([]string)
-		YuanTu(List[4]+List[5]+List[6], strconv.FormatInt(ctx.Event.UserID, 10))
+		Ypath := NewPath(ctx.Event.UserID)
+		Ypath.AddIm(List[4] + List[5] + List[6])
 		var picurl string
 		switch {
 		case List[1] == "爬":
@@ -68,16 +68,4 @@ func init() { // 插件主体
 			message.Image(picurl),
 		)
 	})
-}
-
-
-func YuanTu(s ...string) {
-	for i, v := range s {
-		_, err := strconv.Atoi(v)
-		if err != nil {
-			Download("https://gchat.qpic.cn/gchatpic_new//--"+strings.ToUpper(v)+"/0", Ypath.User+"yuan"+strconv.Itoa(i)+".gif")
-		} else {
-			Download("http://q4.qlogo.cn/g?b=qq&nk="+v+"&s=640", Ypath.User+"yuan"+strconv.Itoa(i)+".gif")
-		}
-	}
 }
