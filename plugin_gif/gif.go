@@ -8,7 +8,7 @@ import (
 )
 
 //摸
-func (cc Paths) Mo() string {
+func (cc *Paths) Mo() string {
 	tou := img.ImDc(cc.Pngs[0], 0, 0).Circle(0).Im
 	mo := []*image.NRGBA{
 		img.ImDc(DLSc(`mo/0.png`), 0, 0).DstOver(tou, 80, 80, 32, 32).Im,
@@ -22,7 +22,7 @@ func (cc Paths) Mo() string {
 }
 
 //摸
-func (cc Paths) Cuo() string {
+func (cc *Paths) Cuo() string {
 	tou := img.ImDc(cc.Pngs[0], 110, 110).Circle(0).Im
 	m1 := img.Rotate(tou, 72, 0, 0)
 	m2 := img.Rotate(tou, 144, 0, 0)
@@ -40,7 +40,7 @@ func (cc Paths) Cuo() string {
 }
 
 //敲
-func (cc Paths) Qiao() string {
+func (cc *Paths) Qiao() string {
 	tou := img.ImDc(cc.Pngs[0], 40, 40).Circle(0).Im
 	qiao := []*image.NRGBA{
 		img.ImDc(DLSc(`qiao/0.png`), 0, 0).Over(tou, 40, 33, 57, 52).Im,
@@ -52,7 +52,7 @@ func (cc Paths) Qiao() string {
 }
 
 //吃
-func (cc Paths) Chi() string {
+func (cc *Paths) Chi() string {
 	tou := img.ImDc(cc.Pngs[0], 32, 32).Im
 	chi := []*image.NRGBA{
 		img.ImDc(DLSc(`chi/0.png`), 0, 0).DstOver(tou, 0, 0, 1, 38).Im,
@@ -65,7 +65,7 @@ func (cc Paths) Chi() string {
 }
 
 //蹭
-func (cc Paths) Ceng() string {
+func (cc *Paths) Ceng() string {
 	tou := img.ImDc(cc.Pngs[0], 100, 100).Circle(0).Im
 	tou2 := img.ImDc(cc.Pngs[1], 100, 100).Circle(0).Im
 	ceng := []*image.NRGBA{
@@ -83,7 +83,7 @@ func (cc Paths) Ceng() string {
 
 
 //啃
-func (cc Paths) Ken() string {
+func (cc *Paths) Ken() string {
 	tou := img.ImDc(cc.Pngs[0], 100, 100).Im
 	ken := []*image.NRGBA{
 		img.ImDc(DLSc(`ken/0.png`), 0, 0).DstOver(tou, 90, 90, 105, 150).Im,
@@ -108,7 +108,7 @@ func (cc Paths) Ken() string {
 }
 
 //拍
-func (cc Paths) Pai() string {
+func (cc *Paths) Pai() string {
 	tou := img.ImDc(cc.Pngs[0], 30, 30).Circle(0).Im
 	pai := []*image.NRGBA{
 		img.ImDc(DLSc(`pai/0.png`), 0, 0).Over(tou, 0, 0, 1, 47).Im,
@@ -120,7 +120,7 @@ func (cc Paths) Pai() string {
 }
 
 //冲
-func (cc Paths) Chong() string {
+func (cc *Paths) Chong() string {
 	tou := img.ImDc(cc.Pngs[0], 0, 0).Circle(0).Im
 	chong := []*image.NRGBA{
 		img.ImDc(DLSc(`xqe/0.png`), 0, 0).Over(tou, 30, 30, 15, 53).Im,
@@ -132,7 +132,7 @@ func (cc Paths) Chong() string {
 }
 
 //丢
-func (cc Paths) Diu() string {
+func (cc *Paths) Diu() string {
 	tou := img.ImDc(cc.Pngs[0], 0, 0).Circle(0).Im
 	diu := []*image.NRGBA{
 		img.ImDc(DLSc(`diu/0.png`), 0, 0).Over(tou, 32, 32, 108, 36).Im,
