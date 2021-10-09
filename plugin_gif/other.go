@@ -2,44 +2,12 @@ package plugin_gif
 
 import (
 	"bufio"
-	"encoding/base64"
 	"fmt"
 	"io"
 	"net/http"
 	"os"
-	"strconv"
 	"strings"
 )
-
-//所有路径
-type Paths struct {
-	User string   //用户目录路径
-	Pngs []string //待处理图片路径
-}
-
-//更新用户目录
-func NewPath(user int64) *Paths {
-	a := `data/image/user/` + strconv.FormatInt(user, 10) + `/`
-	os.MkdirAll(a, 0777)
-	return &Paths{
-		User: a,
-		Pngs: []string{},
-	}
-}
-
-//添加图片
-func (cc *Paths) AddIm(s ...string) {
-	for _, v := range s {
-		_, err := strconv.Atoi(v)
-		n := cc.User + strings.ToUpper(v) + `.png`
-		if err != nil {
-			Download("https://gchat.qpic.cn/gchatpic_new//--"+strings.ToUpper(v)+"/0", n)
-		} else {
-			Download("http://q4.qlogo.cn/g?b=qq&nk="+v+"&s=640", n)
-		}
-		cc.Pngs = append(cc.Pngs, n)
-	}
-}
 
 //获取素材
 func DLSc(nm string) string {
@@ -75,15 +43,4 @@ func Download(url, dlpath string) {
 	// 获得文件的writer对象
 	writer := bufio.NewWriter(file)
 	io.Copy(writer, reader)
-}
-
-//图片转Base64
-func Base64(p string) string {
-	//读原图片
-	ff, _ := os.Open(p)
-	defer ff.Close()
-	sourcebuffer := make([]byte, 500000)
-	n, _ := ff.Read(sourcebuffer)
-	//base64压缩
-	return base64.StdEncoding.EncodeToString(sourcebuffer[:n])
 }
